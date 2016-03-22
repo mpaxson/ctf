@@ -1,0 +1,13 @@
+from pwn import *
+import bs4
+import socket
+
+url = 'challenges.hackucf.org/easy2.php'
+
+r.send('Get /\easy2.php')
+r.recv(2048);
+
+
+
+response = r.recvn(2048)
+print response
