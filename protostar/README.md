@@ -1,14 +1,14 @@
-# Stack CHallenges
+# Challenges completed so far
 
-## Stack 0
-- Finished
+## Stack
+- /#0
+- /#1
 
-## stack 1
-- finished
+## net
+	-none done so far
 
-## Stack 2
-- in progress
-
+## heap
+	-none done so far
 
 
 
