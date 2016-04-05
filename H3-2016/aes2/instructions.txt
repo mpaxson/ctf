@@ -1,0 +1,1 @@
+The included server is an encryption oracle listening on 10.10.10.73:8764.  You must decrypt the included 'flag.enc' file, which was encrypted using the same key the oracle has.

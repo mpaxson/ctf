@@ -1,0 +1,6 @@
+POST / HTTP/1.1
+Host: http://10.10.10.203:3371
+
+
+
+parametername={username:*, password:*}

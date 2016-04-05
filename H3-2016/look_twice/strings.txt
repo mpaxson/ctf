@@ -1,0 +1,192 @@
+GET /flag.pdf HTTP/1.1
+User-Agent: Wget/1.17.1 (darwin15.2.0)
+Accept: */*
+Accept-Encoding: identity
+Host: localhost
+Connection: Keep-Alive
+HTTP/1.1 200 OK
+Date: Sun, 27 Mar 2016 22:18:29 GMT
+Server: Apache/2.4.16 (Unix)
+Last-Modified: Sun, 27 Mar 2016 22:17:53 GMT
+ETag: "1ce1-52f0f2ad26640"
+Accept-Ranges: bytes
+Content-Length: 7393
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/pdf
+HHKk_
+8?}?	
+9]j[h
+%PDF-1.3
+4 0 obj
+<< /Length 5 0 R /Filter /FlateDecode >>
+stream
+2U0 
+GTPJd
+k^V]V
+endstream
+endobj
+5 0 obj
+endobj
+2 0 obj
+<< /Type /Page /Parent 3 0 R /Resources 6 0 R /Contents 4 0 R /MediaBox [0 0 612 792]
+endobj
+6 0 obj
+<< /ProcSet [ /PDF /Text ] /ColorSpace << /Cs1 7 0 R >> /Font << /TT2 9 0 R
+>> >>
+endobj
+10 0 obj
+<< /Length 11 0 R /N 3 /Alternate /DeviceRGB /Filter /FlateDecode >>
+stream
+)VdT
+"7C$
+6<~&
+$n?z
+LA"S
+yCAP8
+?v	6
+\2n5
+ $l$T
+TIj"]&=&
+:dGr
+Y@^O
+@y@yC
+D}J}/G
+	e%e[
+*n*|
+0j&jaj
+.[7A
+SwBOK/X/_
+k]c}
+Ux~xw
+-bEDC
+GME{E
+{$vr
++]3='
+L(sYf
+~5f5wug
+m mH
+Va[q`
+6i{L{
+:Wt>
+9];}
+?w|	
+x&mf
+endstream
+endobj
+11 0 obj
+2612
+endobj
+7 0 obj
+[ /ICCBased 10 0 R ]
+endobj
+3 0 obj
+<< /Type /Pages /MediaBox [0 0 612 792] /Count 1 /Kids [ 2 0 R ] >>
+endobj
+12 0 obj
+<< /Type /Catalog /Pages 3 0 R >>
+endobj
+9 0 obj
+<< /Type /Font /Subtype /TrueType /BaseFont /CKBZJQ+Calibri /FontDescriptor
+13 0 R /ToUnicode 14 0 R /FirstChar 33 /LastChar 44 /Widths [ 646 527 335
+525 229 525 471 226 391 498 349 252 ] >>
+endobj
+14 0 obj
+<< /Length 15 0 R /Filter /FlateDecode >>
+stream
+%6B"
+endstream
+endobj
+15 0 obj
+endobj
+13 0 obj
+<< /Type /FontDescriptor /FontName /CKBZJQ+Calibri /Flags 4 /FontBBox [-503 -307 1240 1026]
+/ItalicAngle 0 /Ascent 952 /Descent -269 /CapHeight 644 /StemV 0 /XHeight
+476 /AvgWidth 521 /MaxWidth 1328 /FontFile2 16 0 R >>
+endobj
+16 0 obj
+<< /Length 17 0 R /Length1 2360 /Filter /FlateDecode >>
+stream
+V}L[
+i]3Ti
+wIV]
+~ROH
+uu7@
+>Wv*O*BO
+D{x=8
+	7Dx
+OnS<h
+p#{2
+3[_5*
+="Od
+b,Z1
+zao~
+Jt`!
+JL??
+FS_{
+AO 5uu 
+LysMI
+g0D<[
+}X^.
+?2.(}
+Xkt Sz
+m}Jf
+:\aMR$j
+,U<s
+endstream
+endobj
+17 0 obj
+1750
+endobj
+18 0 obj
+(Microsoft Word - Document1)
+endobj
+19 0 obj
+(Mac OS X 10.11.2 Quartz PDFContext)
+endobj
+20 0 obj
+(Word)
+endobj
+21 0 obj
+(D:20160327221446Z00'00')
+endobj
+22 0 obj
+endobj
+23 0 obj
+endobj
+1 0 obj
+<< /Title 18 0 R /Producer 19 0 R /Creator 20 0 R /CreationDate 21 0 R /ModDate
+21 0 R /Keywords 22 0 R /AAPL:Keywords 23 0 R >>
+endobj
+xref
+0 24
+0000000000 65535 f 
+0000006323 00000 n 
+0000000321 00000 n 
+0000003294 00000 n 
+0000000022 00000 n 
+0000000302 00000 n 
+0000000425 00000 n 
+0000003258 00000 n 
+0000000000 00000 n 
+0000003427 00000 n 
+0000000522 00000 n 
+0000003237 00000 n 
+0000003377 00000 n 
+0000004024 00000 n 
+0000003633 00000 n 
+0000004004 00000 n 
+0000004260 00000 n 
+0000006100 00000 n 
+0000006121 00000 n 
+0000006166 00000 n 
+0000006219 00000 n 
+0000006242 00000 n 
+0000006284 00000 n 
+0000006303 00000 n 
+trailer
+<< /Size 24 /Root 12 0 R /Info 1 0 R /ID [ <d04125711094a3b61eb66d6892950be5>
+<d04125711094a3b61eb66d6892950be5> ] >>
+startxref
+6467
+%%EOF

@@ -6,7 +6,7 @@ import requests
 
 
 session = requests.Session()
-url = 'http://challenges.hackucf.org/easy2.php'
+url = 'http://ctf.hackucf.org:4000/calc/calc.php'
 headers = {'User-Agent': 'Mozilla/5.0'}
 
 r = session.get(url)

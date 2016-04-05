@@ -1,0 +1,1 @@
+The server included is listening on 10.10.10.35:8765.  Connect to the server and provide the correct password to get the flag.
