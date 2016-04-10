@@ -1,1 +1,1 @@
-socat -v tcp-l:1234,fork exec:'./echo'
+socat -v tcp-l:1234,fork exec:'./ret'
