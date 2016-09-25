@@ -1,0 +1,1 @@
+python exploit.py > input
