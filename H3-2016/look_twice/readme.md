@@ -15,7 +15,7 @@ PaxHeader/flag.txt
 flag.txt
 The flag is: {{FLAG}}
 ```
-Strings OP
+## Strings OP
 
 [pcap]: https://github.com/mpaxson/ctf/raw/master/H3-2016/look_twice/challenge.pcapng
 [pdf]: https://github.com/mpaxson/ctf/blob/master/H3-2016/look_twice/flag.pdf
