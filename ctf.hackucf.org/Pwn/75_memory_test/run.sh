@@ -1,1 +1,1 @@
-socat -v tcp-l:1235,fork exec:'./mem_test'
+socat -v tcp-l:1234,fork,reuseaddr exec:'./mem_test'
