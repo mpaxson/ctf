@@ -10,7 +10,7 @@ So we are given a binary tooEasy and was told that
 
 Opening up the binary in ida we see two functions of note, `main` and `det`, generated c code at the bottom of this post.
 
-In main buffer is allocated to **0x424** (or (1060)<sup>10</sup> in decimal)
+In main buffer is allocated to **0x424** (or (1060)<sub>10</sub> in decimal)
 
 The variable (not originally named this) called `overWriteThisSheet` is allocated right after buffer. 
 `overWriteThisSheet = 56797;` happens in `main`. 
