@@ -1,5 +1,5 @@
 ---
-## 200 Too easy WCSC
+## 100 Too easy WCSC
 
 This one as the name suggests, was incredibly easy and honestly probably worth too many points, but here's a writeup regardless.
 
