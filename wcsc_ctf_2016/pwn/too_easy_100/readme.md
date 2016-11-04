@@ -1,6 +1,5 @@
 ---
-h2. Too easy
-h3. WCSC 
+## 200 Too easy WCSC
 
 This one as the name suggests, was incredibly easy and honestly probably worth too many points, but here's a writeup regardless.
 
