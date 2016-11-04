@@ -15,7 +15,7 @@ In main buffer is allocated to **0x424** (or (1060)<sub>10</sub> in decimal)
 The variable (not originally named this) called `overWriteThisSheet` is allocated right after buffer. 
 `overWriteThisSheet = 56797;` happens in `main`. 
 
-Now looking at `det` we see that `verWriteThisShit` is passed to the function and has a simple check to see if it is the originally set value, **56797**. 
+Now looking at `det` we see that `overWriteThisShit` is passed to the function and has a simple check to see if it is the originally set value, **56797**. 
 
 So even though the python script to run this like a normal exploit, it would be easier to just use `python -c '"a"*1070' ` and pipe the output to `nc wcscctf.org 8383`
 
