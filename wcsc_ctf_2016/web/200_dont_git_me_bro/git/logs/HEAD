@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 7857d1154fa27303de6b2063e2cdb84d2af26a88 bt <btrotter@mail.usf.edu> 1427479198 -0400	commit (initial): initial commit
+7857d1154fa27303de6b2063e2cdb84d2af26a88 590b6da9830a47dd98afe82b60b1dce2548d8b60 bt <btrotter@mail.usf.edu> 1427479213 -0400	commit: super secret
+590b6da9830a47dd98afe82b60b1dce2548d8b60 c931d0fe5718bd79aba87d0291dcc011cd4b3b4c bt <btrotter@mail.usf.edu> 1427479652 -0400	commit: removed secrets
+c931d0fe5718bd79aba87d0291dcc011cd4b3b4c 590b6da9830a47dd98afe82b60b1dce2548d8b60 bt <btrotter@mail.usf.edu> 1476905915 -0400	checkout: moving from master to 590b
+590b6da9830a47dd98afe82b60b1dce2548d8b60 7857d1154fa27303de6b2063e2cdb84d2af26a88 bt <btrotter@mail.usf.edu> 1476906041 -0400	checkout: moving from 590b6da9830a47dd98afe82b60b1dce2548d8b60 to 7857
+7857d1154fa27303de6b2063e2cdb84d2af26a88 7c0708b646d0da58475bbc032d2535f34c5dc0d4 bt <btrotter@mail.usf.edu> 1476906094 -0400	commit: added secret key
+7c0708b646d0da58475bbc032d2535f34c5dc0d4 16e06e9ceed183dc6881af43915e5ab799734797 bt <btrotter@mail.usf.edu> 1476906134 -0400	commit: oops, shouldn't have put the secret in
+16e06e9ceed183dc6881af43915e5ab799734797 7c0708b646d0da58475bbc032d2535f34c5dc0d4 Mark Paxson <kettleofketchup@gmail.com> 1477417956 -0400	checkout: moving from 16e06e9ceed183dc6881af43915e5ab799734797 to 7c0708b646d0da58475bbc032d2535f34c5dc0d4
+7c0708b646d0da58475bbc032d2535f34c5dc0d4 7e82f0c299befaf46f7afc216a8c4c8b2e74153c Mark Paxson <kettleofketchup@gmail.com> 1477849067 -0400	commit: added challenges
